@@ -13,6 +13,7 @@ uvicorn = {extras = ["standard"] }
 sqlalchemy = "*"
 pymysql = "*"
 pydantic = "*"
+strawberry-graphql = {extras = ["fastapi"], version = "*"}
 
 [dev-packages]
 ruff = "*"
