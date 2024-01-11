@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+server = "uvicorn src.main:app --reload --port 4000"
+fmt_fix = "ruff format ./src/"
+
+[packages]
+fastapi = "*"
+uvicorn = {extras = ["standard"] }
+sqlalchemy = "*"
+pymysql = "*"
+pydantic = "*"
+
+[dev-packages]
+ruff = "*"
+pre-commit = "*"
+
+[requires]
+python_version = "3.11"
