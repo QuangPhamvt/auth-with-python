@@ -12,7 +12,7 @@ fastapi = "*"
 uvicorn = {extras = ["standard"] }
 pymysql = "*"
 pydantic = "*"
-strawberry-graphql = {extras = ["fastapi"], version = "*"}
+strawberry-graphql = {extras = ["fastapi"] }
 asyncmy = "*"
 alembic = "*"
 sqlalchemy = "*"
@@ -22,6 +22,9 @@ ruff = "*"
 [dev-packages]
 ruff = "*"
 pre-commit = "*"
+rich = "*"
+typer = "*"
+libcst = "*"
 
 [requires]
 python_version = "3.11"

@@ -8,12 +8,16 @@ class Base(DeclarativeBase):
 
 
 class User(Base):
+    def __init__(self, username: str, hash_password: bytes):
+        self.username = username
+        self.hash_password = hash_password
+
     __tablename__ = "users"
     id: Mapped[Uuid] = mapped_column(
         Uuid, name="id", primary_key=True, default=uuid.uuid4
     )
     username: Mapped[str] = mapped_column(String(50), name="username", unique=True)
-    hash_password: Mapped[str] = mapped_column(
+    hash_password: Mapped[bytes] = mapped_column(
         String(255), name="hash_password", nullable=False
     )
     profile_id: Mapped[Uuid] = mapped_column(Uuid, name="profile_id", nullable=True)
