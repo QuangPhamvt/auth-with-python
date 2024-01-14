@@ -117,3 +117,6 @@ class Mutation:
         if is_checkpw:
             return LoginUserSuccess(User(str(user_obj.id), user_obj.username))
         return PasswordError("PasswordError")
+
+
+__all__ = ["Mutation"]

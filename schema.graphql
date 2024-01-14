@@ -1,3 +1,47 @@
+input InputLoginUser {
+  username: String!
+  password: String!
+}
+
+input InputRegisterUser {
+  username: String!
+  password: String!
+}
+
+union LoginUSerResponse = LoginUserSuccess | PasswordError | UsernameError
+
+type LoginUserSuccess {
+  user: User!
+}
+
+type Mutation {
+  registerUser(input: InputRegisterUser!): RegisterUserResponse!
+  loginUser(input: InputLoginUser!): LoginUSerResponse!
+}
+
+type PasswordError {
+  message: String!
+}
+
 type Query {
   hello: String!
+}
+
+union RegisterUserResponse = RegisterUserSuccess | UsernameAlreadyExistsError
+
+type RegisterUserSuccess {
+  user: User!
+}
+
+type User {
+  id: String!
+  username: String!
+}
+
+type UsernameAlreadyExistsError {
+  alternativeUsername: String!
+}
+
+type UsernameError {
+  message: String!
 }

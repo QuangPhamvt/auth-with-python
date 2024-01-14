@@ -4,5 +4,7 @@ from .queries import Query
 from .mutations import Mutation
 
 
-schema = strawberry.Schema(Query, Mutation, extensions=[ApolloTracingExtensionSync])
+schema = strawberry.Schema(
+    query=Query, mutation=Mutation, extensions=[ApolloTracingExtensionSync]
+)
 __all__ = ["schema"]
